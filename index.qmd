@@ -9,7 +9,6 @@ bibliography: references.bib
 
 This example models a thesis-style workflow in **Quarto**: a project overview at the top, numbered analysis chapters in a dedicated folder, reusable functions in `R/`, raw data in `data/`, and polished outputs in `figs/`.
 
-It is designed for teaching students how to organize a research repository that is readable, reproducible, and suitable for public presentation.
 :::
 
 ::: {.muted-note}
@@ -20,7 +19,7 @@ Example analytical theme: *Bombus crotchii* distribution, phenology, and spatial
 
 This repository is organized like a thesis or dissertation workflow. The aim is to make the project legible to three audiences at once: the author, the committee, and future collaborators.
 
-The example is framed around *Bombus crotchii* field observations and related phenology and spatial analyses. The reusable R functions in `R/analysis_functions.R` support abundance models, habitat comparisons, temporal analyses, spatial autocorrelation, distribution modeling, visualization, and validation. These are the sorts of tools a student might gradually build across a thesis project.
+The example is framed around *Bombus crotchii* field observations and related phenology and spatial analyses. The reusable R functions in `R/analysis_functions.R` support abundance models, habitat comparisons, temporal analyses, spatial autocorrelation, distribution modeling, visualization, and validation. 
 
 ## Why organize a thesis repository this way?
 
@@ -69,7 +68,7 @@ The pages in `analysis/` are written in the order a reader would expect:
 
 ## Reproducibility notes
 
-This example is set up as a Quarto website so it can also serve as a GitHub Pages site. That is useful in class because students can see how one repository can support active analysis, transparent methods, and a public-facing project website.
+This example is set up as a Quarto website so it can also serve as a GitHub Pages site. 
 
 ## A few useful references
 
