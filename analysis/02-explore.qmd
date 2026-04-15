@@ -1,0 +1,54 @@
+---
+title: "02: Exploratory analysis"
+---
+
+## Purpose
+
+Exploration is where students learn the shape of the data before fitting formal models. This section should summarize distributions, identify outliers, and reveal possible relationships worth modeling.
+
+```{r}
+#| eval: false
+library(tidyverse)
+source("../R/analysis_functions.R")
+```
+
+## Example summaries
+
+```{r}
+#| eval: false
+surveys_df |>
+  count(habitat_type)
+
+surveys_df |>
+  summarize(
+    mean_bees = mean(bee_count, na.rm = TRUE),
+    sd_bees = sd(bee_count, na.rm = TRUE),
+    mean_temp = mean(temperature, na.rm = TRUE)
+  )
+```
+
+## Example exploratory plots
+
+```{r}
+#| eval: false
+surveys_df |>
+  ggplot(aes(x = habitat_type, y = bee_count)) +
+  geom_boxplot()
+```
+
+```{r}
+#| eval: false
+plot_temporal_patterns(phenology_df)
+```
+
+## Questions to ask during exploration
+
+- Are counts heavily zero-inflated?
+- Do some habitats show consistently different abundance?
+- Are temperature and bee visits associated?
+- Are there seasonal peaks by elevation band?
+- Are there obvious site-level clusters?
+
+## Transition to modeling
+
+Exploration should motivate the modeling chapter. By the end of this document, the reader should understand why particular predictors and model forms were chosen.

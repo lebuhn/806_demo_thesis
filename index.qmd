@@ -1,0 +1,76 @@
+---
+title: "Project overview"
+subtitle: "An example thesis repository that renders as a GitHub Pages site"
+bibliography: references.bib
+---
+
+::: {.hero-banner}
+## Example thesis repository
+
+This example models a thesis-style workflow in **Quarto**: a project overview at the top, numbered analysis chapters in a dedicated folder, reusable functions in `R/`, raw data in `data/`, and polished outputs in `figs/`.
+
+It is designed for teaching students how to organize a research repository that is readable, reproducible, and suitable for public presentation.
+:::
+
+::: {.muted-note}
+Example analytical theme: *Bombus crotchii* distribution, phenology, and spatial ecology.
+:::
+
+## Overview
+
+This repository is organized like a thesis or dissertation workflow. The aim is to make the project legible to three audiences at once: the author, the committee, and future collaborators.
+
+The example is framed around *Bombus crotchii* field observations and related phenology and spatial analyses. The reusable R functions in `R/analysis_functions.R` support abundance models, habitat comparisons, temporal analyses, spatial autocorrelation, distribution modeling, visualization, and validation. These are the sorts of tools a student might gradually build across a thesis project.
+
+## Why organize a thesis repository this way?
+
+A good thesis repository should do three things:
+
+1. Separate raw inputs from interpretation.
+2. Show the order of analytical decisions.
+3. Make it easy to rebuild tables, figures, and results.
+
+This structure does that by keeping the project overview at the top level, placing analysis chapters in a numbered folder, storing data in one place, and saving generated figures in a dedicated output directory.
+
+## Repository structure
+
+```text
+index.qmd          <- Project overview and data description
+analysis/
+  01-clean.qmd     <- Data cleaning and decisions
+  02-explore.qmd   <- Exploratory analysis
+  03-model.qmd     <- Statistical modeling
+  04-figures.qmd   <- Publication figures
+
+data/              <- Raw data (or link to repository)
+figs/              <- Saved figure outputs
+R/
+  analysis_functions.R <- Reusable analysis functions
+```
+
+## Data description
+
+The project assumes three core data objects that would usually be created from raw files in `data/`:
+
+- `surveys_df` for distribution and abundance analyses,
+- `phenology_df` for flowering and bee-visit timing,
+- `spatial_df` for site-level spatial analyses.
+
+In a real thesis repository, `data/` would contain either raw CSV files, metadata files describing field collection, or a short README linking to a protected or external source.
+
+## Analysis roadmap
+
+The pages in `analysis/` are written in the order a reader would expect:
+
+- `01-clean.qmd`: import data, standardize names, and record decisions,
+- `02-explore.qmd`: summarize variables and inspect patterns,
+- `03-model.qmd`: fit the main statistical models,
+- `04-figures.qmd`: save polished figures for the thesis or manuscript.
+
+## Reproducibility notes
+
+This example is set up as a Quarto website so it can also serve as a GitHub Pages site. That is useful in class because students can see how one repository can support active analysis, transparent methods, and a public-facing project website.
+
+## A few useful references
+
+This scaffold fits naturally with familiar tools in modern R-based workflows, including Quarto, the tidyverse, and flexible modeling frameworks such as GAMs [@wickham2017r; @wood2011fast; @borcard2018numerical].

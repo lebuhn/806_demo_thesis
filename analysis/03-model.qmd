@@ -1,0 +1,65 @@
+---
+title: "03: Statistical modeling"
+---
+
+## Purpose
+
+This section contains the formal models used to answer the project questions. It is usually the most thesis-like part of the repository because it ties biological questions to specific statistical machinery.
+
+```{r}
+#| eval: false
+source("../R/analysis_functions.R")
+```
+
+## Abundance model
+
+The example repository includes a generalized linear mixed model for bee abundance using elevation, slope, transformed aspect, habitat, temperature, and wind speed, with random intercepts for site and date.
+
+```{r}
+#| eval: false
+mod_abundance <- abundance_model(surveys_df)
+summary(mod_abundance)
+```
+
+## Habitat comparison
+
+The repository also includes a habitat-level aggregation followed by ANOVA.
+
+```{r}
+#| eval: false
+habitat_results <- habitat_analysis(surveys_df)
+summary(habitat_results$model)
+```
+
+## Phenological analysis
+
+Temporal matching between flowering and bee activity can be modeled with a GAM.
+
+```{r}
+#| eval: false
+mod_pheno <- phenology_analysis(phenology_df)
+summary(mod_pheno)
+```
+
+## Spatial analysis
+
+At the site level, students can test for spatial autocorrelation and fit a distribution model.
+
+```{r}
+#| eval: false
+moran_out <- spatial_autocorr(spatial_df)
+moran_out
+
+sdm_out <- distribution_model(spatial_df)
+summary(sdm_out)
+```
+
+## What students should explain
+
+Students should not stop at output. They should state:
+
+- the response variable,
+- the predictors,
+- why the model family is appropriate,
+- what random effects represent,
+- and how the model answers the biological question.

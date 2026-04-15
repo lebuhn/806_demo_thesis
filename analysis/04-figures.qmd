@@ -1,0 +1,57 @@
+---
+title: "04: Publication figures"
+---
+
+## Purpose
+
+This chapter turns exploratory and modeling output into polished figures saved to `figs/` for use in a thesis, defense, or manuscript.
+
+```{r}
+#| eval: false
+library(ggplot2)
+source("../R/analysis_functions.R")
+```
+
+## Temporal figure
+
+```{r}
+#| eval: false
+p_time <- plot_temporal_patterns(phenology_df)
+p_time
+
+ggsave(
+  filename = "../figs/temporal-patterns.png",
+  plot = p_time,
+  width = 10,
+  height = 7,
+  dpi = 300
+)
+```
+
+## Spatial figure
+
+```{r}
+#| eval: false
+p_space <- plot_spatial_distribution(spatial_df)
+p_space
+
+ggsave(
+  filename = "../figs/spatial-distribution.png",
+  plot = p_space,
+  width = 10,
+  height = 7,
+  dpi = 300
+)
+```
+
+## Figure standards
+
+A thesis repository should save figures rather than rely on temporary plots in the R session. That makes it easier to:
+
+- reuse figures in writing,
+- track changes over time,
+- and regenerate publication-ready output.
+
+## Final note
+
+Students should label axes carefully, use readable themes, and choose figure dimensions that fit the intended document.

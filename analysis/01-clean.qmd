@@ -1,0 +1,62 @@
+---
+title: "01: Data cleaning and decisions"
+---
+
+## Purpose
+
+This document shows where data cleaning happens and, just as importantly, where the student explains what was changed and why. In a thesis repository, this is often the most important analytical chapter because it preserves the chain of decisions.
+
+## Recommended raw files
+
+Store raw data in `data/` and avoid editing those files directly. Instead, read them in and create cleaned objects in code.
+
+```{r}
+#| eval: false
+library(tidyverse)
+
+surveys_raw <- read_csv("data/surveys.csv")
+phenology_raw <- read_csv("data/phenology.csv")
+spatial_raw <- read_csv("data/spatial_sites.csv")
+```
+
+## Example cleaning workflow
+
+```{r}
+#| eval: false
+surveys_df <- surveys_raw |>
+  janitor::clean_names() |>
+  mutate(
+    date = as.Date(date),
+    habitat_type = factor(habitat_type),
+    caste = factor(caste),
+    survey_id = as.character(survey_id)
+  ) |>
+  filter(!is.na(site_id), !is.na(date))
+```
+
+## Validation checks
+
+The repository includes a validation function in `R/analysis_functions.R`.
+
+```{r}
+#| eval: false
+source("R/analysis_functions.R")
+validation_results <- validate_survey_data(surveys_df)
+validation_results$missing
+validation_results$impossible
+validation_results$duplicates
+```
+
+## Decisions to document
+
+In a real project, students should explain decisions such as:
+
+- how dates were standardized,
+- how missing values were handled,
+- which rows were excluded,
+- how factor levels were defined,
+- and whether any derived variables were created.
+
+## Good practice
+
+Write cleaning as a narrative record, not just a code dump. A committee member should be able to understand what changed without reverse-engineering every line.

@@ -1,0 +1,51 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Example Thesis Repository"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: analysis/01-clean.qmd
+        text: Cleaning
+      - href: analysis/02-explore.qmd
+        text: Exploration
+      - href: analysis/03-model.qmd
+        text: Modeling
+      - href: analysis/04-figures.qmd
+        text: Figures
+  sidebar:
+    style: docked
+    search: true
+    contents:
+      - section: "Project"
+        contents:
+          - index.qmd
+          - about.qmd
+      - section: "Analysis"
+        contents:
+          - analysis/01-clean.qmd
+          - analysis/02-explore.qmd
+          - analysis/03-model.qmd
+          - analysis/04-figures.qmd
+  page-footer:
+    left: "Example thesis repository for teaching reproducible research"
+    right: "Built with Quarto"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: true
+    code-fold: show
+    code-summary: "Show code"
+    css: styles.css
+
+execute:
+  echo: true
+  warning: false
+  message: false

@@ -1,0 +1,9 @@
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+.quarto/
+docs/
+_site/
+*_cache/
+*.html

@@ -1,0 +1,37 @@
+---
+title: "About this example"
+---
+
+## Why this repository exists
+
+This example is designed for teaching. It shows students how to organize a thesis or dissertation repository so that the logic of the project is visible from the first page.
+
+A well-kept research repository should make three things easy to find:
+
+1. what the project is about,
+2. how the data were processed,
+3. how the results and figures were produced.
+
+## What students should notice
+
+Students should notice that this repository separates:
+
+- project explanation from analysis code,
+- raw inputs from saved outputs,
+- exploratory work from final figures.
+
+That separation is one of the habits that makes research easier to review, revise, and defend.
+
+## Adapting this for a real thesis
+
+In a real thesis repository, the student would usually add:
+
+- a fuller data dictionary,
+- citations and references,
+- rendered tables,
+- manuscript or chapter text,
+- and a short note on how others can reproduce the analysis.
+
+## Teaching note
+
+This site is intentionally modest. It is meant to model solid scholarly organization, not flashy design.
